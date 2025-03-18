@@ -18,6 +18,7 @@ class Database {
                     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
                 );
             } catch (PDOException $e) {
+                Logger::error("Erreur de connexion à la BDD: " . $e->getMessage());
                 die("Erreur de connexion : " . $e->getMessage());
             }
         }
